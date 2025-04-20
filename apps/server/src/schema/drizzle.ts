@@ -3,6 +3,8 @@ import type { OptionsFive } from 'shared'
 import type { OptionsThree } from './types'
 import type { OptionsFour } from '../../../../types'
 
+export * from './other-schema'
+
 // Define type in line
 export const tableOne = p.pgTable('table_one', {
 	id: p.varchar('id').primaryKey(),
@@ -12,6 +14,7 @@ export const tableOne = p.pgTable('table_one', {
 })
 
 // Define interface, pass to options
+// Generation breaks with interface but not type
 interface OptionsTwo {
     name: string
 }

@@ -46,7 +46,13 @@ export type Schema = {
           type: "string";
           customType: string;
         };
-        readonly options: never;
+        readonly options: {
+          type: "json";
+          customType: {
+            name: string;
+          };
+          optional: true;
+        };
       };
     };
     tableThree: {
@@ -76,7 +82,39 @@ export type Schema = {
         };
         readonly options: {
           type: "json";
+          customType: Simplify<import("../../../../types").OptionsFour>;
+          optional: true;
+        };
+      };
+    };
+    tableFive: {
+      name: "tableFive";
+      primaryKey: any;
+      columns: {
+        readonly id: {
+          optional: false;
+          type: "string";
+          customType: string;
+        };
+        readonly options: {
+          type: "json";
           customType: Simplify<import("../../../shared/src").OptionsFive>;
+          optional: true;
+        };
+      };
+    };
+    tableSix: {
+      name: "tableSix";
+      primaryKey: any;
+      columns: {
+        readonly id: {
+          optional: false;
+          type: "string";
+          customType: string;
+        };
+        readonly options: {
+          type: "json";
+          customType: Simplify<import("./types").OptionsThree>;
           optional: true;
         };
       };
@@ -87,6 +125,25 @@ export type Schema = {
 
 export const schema = {
   "tables": {
+    "tableFive": {
+      "name": "tableFive",
+      "columns": {
+        "id": {
+          "type": "string",
+          "optional": false,
+          "customType": null as unknown
+        },
+        "options": {
+          "type": "json",
+          "optional": true,
+          "customType": null as unknown
+        }
+      },
+      "primaryKey": [
+        "id"
+      ],
+      "serverName": "table_five"
+    },
     "tableFour": {
       "name": "tableFour",
       "columns": {
@@ -125,6 +182,25 @@ export const schema = {
       ],
       "serverName": "table_one"
     },
+    "tableSix": {
+      "name": "tableSix",
+      "columns": {
+        "id": {
+          "type": "string",
+          "optional": false,
+          "customType": null as unknown
+        },
+        "options": {
+          "type": "json",
+          "optional": true,
+          "customType": null as unknown
+        }
+      },
+      "primaryKey": [
+        "id"
+      ],
+      "serverName": "table_six"
+    },
     "tableThree": {
       "name": "tableThree",
       "columns": {
@@ -150,6 +226,11 @@ export const schema = {
         "id": {
           "type": "string",
           "optional": false,
+          "customType": null as unknown
+        },
+        "options": {
+          "type": "json",
+          "optional": true,
           "customType": null as unknown
         }
       },

@@ -23,5 +23,9 @@ export default drizzleZeroConfig(drizzleSchema,{
             id: true,
             options: true,
         },
+        tableSix: {
+            id: true,
+            options: true,
+        },
     },
 })
