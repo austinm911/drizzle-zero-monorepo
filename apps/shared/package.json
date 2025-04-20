@@ -1,0 +1,20 @@
+{
+  "name": "shared",
+  "main": "src/index.ts",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "check-types": "tsc --noEmit",
+    "compile": "bun build --compile --minify --sourcemap --bytecode ./src/index.ts --outfile server"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.6",
+    "tsc-alias": "^1.8.11",
+    "typescript": "^5.8.2"
+  }
+}
